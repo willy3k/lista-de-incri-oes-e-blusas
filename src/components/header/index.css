@@ -14,16 +14,19 @@
   width: 100%;
   background: #872637;
   color: white;
-  padding: 20px;
+  padding: 15px;
 }
 .title {
-  border: 1px solid;
+
+
+}
+.title2{
+  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 50px;
-}
-h1{
+  box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 20px;
   display: flex;
   align-items: center;
