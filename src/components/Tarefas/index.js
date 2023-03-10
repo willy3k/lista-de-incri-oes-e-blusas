@@ -1,29 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Tarefas.css';
-
 import { FaEdit, FaWindowClose } from 'react-icons/fa';
 
-export default function Tarefas({ tarefas, handleEdit, handleDelete }) {
+import './Tarefas.css';
+
+export default function Tarefas({
+  tarefas, handleEdit, handleDelete,
+}) {
+  const totalTarefas = tarefas.length;
+  const tarefasCompleted = tarefas.filter((item) => item.check).length;
+
   return (
-    <ul className="tarefas">
-      {tarefas.map((tarefa, index) => (
-        <li key={tarefa}>
-          {tarefa}
-          <span>
-            <FaEdit
-              onClick={(e) => handleEdit(e, index)}
-              className="edit"
-            />
-            <FaWindowClose
-              onClick={(e) => handleDelete(e, index)}
-              className="del"
-            />
+    <>
+      <header className="total-chek">
+        <h3>
+          Tarefas Criadas
+          <span className="total">{totalTarefas}</span>
+        </h3>
+        <h4>
+          Concluidas
+          <span className="concluido">
+            {tarefasCompleted}
+            -
+            de
+            -
+            {totalTarefas}
           </span>
-        </li>
-      ))}
-    </ul>
+        </h4>
+      </header>
+      <div className="cent">
+        <ul className="tarefas">
+          {tarefas.map((tarefa, index) => (
+            <li key={tarefa}>
+              <button type="submit" className="button">
+                <input className="check" type="checkbox" name="" id="" />
+              </button>
+              {tarefa}
+              <span>
+                <FaEdit
+                  onClick={(e) => handleEdit(e, index)}
+                  className="edit"
+                />
+                <FaWindowClose
+                  onClick={(e) => handleDelete(e, index)}
+                  className="del"
+                />
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      </div>
+
+    </>
   );
 }
 

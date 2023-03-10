@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
-import Header from './header';
 import Form from './Form';
 import Tarefas from './Tarefas';
-import Camisas from './Camisas';
-import Footer from './footer';
 // tarefas
 
 import './Main.css';
@@ -89,11 +86,24 @@ export default class Main extends Component {
     });
   };
 
+  // eslint-disable-next-line class-methods-use-this
+  handleCheckTarefas = () => {
+    const { tarefas } = this.state;
+    const taskCheck = tarefas.map((index) => {
+      if (index.id === taskCheck) {
+        return { ...index, check: !index.check };
+      } return index;
+    });
+    this.setState({
+      tarefas: [...taskCheck],
+    });
+  };
+
   render() {
     const { novaTarefa, tarefas } = this.state;
+
     return (
       <>
-        <Header />
         <section>
           <div className="main">
             <h1>Lista das inscrição</h1>
@@ -103,20 +113,17 @@ export default class Main extends Component {
               hendleChange={this.hendleChange}
               novaTarefa={novaTarefa}
             />
-            <Tarefas
-              handleEdit={this.handleEdit}
-              handleDelete={this.handleDelete}
-              tarefas={tarefas}
-            />
-          </div>
-          <div className="main">
-            <h1>Lista das camisas</h1>
-            <Camisas />
           </div>
         </section>
-        <Footer />
+        <section className="center-section">
+          <Tarefas
+            handleEdit={this.handleEdit}
+            handleDelete={this.handleDelete}
+            handleCheckTarefas={this.handleCheckTarefas}
+            tarefas={tarefas}
+          />
+        </section>
       </>
-
     );
   }
 }

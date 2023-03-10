@@ -1,19 +1,76 @@
+.total-chek {
+  padding: 20px 5px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+}
+h3 {
+  color: white;
+}
+.total {
+  border-radius: 8px;
+  color: white;
+  background: black;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+h4 {
+  color: red;
+}
+.concluido {
+background: black;
+border-radius: 8px;
+color: white;
+padding: 5px 10px;
+margin: 0 5px;
+}
+
+.cent {
+  padding: auto;
+  width: 800px;
+}
+
+/* check */
+.tarefas .button .check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+}
+
+/* .tarefas .button .isFalse {
+  border: .2rem solid #4EA8DE;
+  border-radius: 100%;
+  padding: .8rem;
+} */
+
+/* tarefas */
+
 .tarefas {
   margin-top: 30px;
+  overflow-y: scroll;
+  height: 300px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 .tarefas li {
   border: 1px solid;
-  margin-top: 5px;
+  margin: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  font-size: 20px;
+  color: wheat;
+  padding: 25px;
+  border-radius: 10px;
   transition: all 600ms;
-}
-.tarefas li:hover {
-  background: #51c5de;
-  box-shadow: 2px 2px 2px 1px black;
+  background: black;
 }
 
 .tarefas li .edit
@@ -27,10 +84,6 @@
   color: #f04c64;
  }
 
- .tarefas li:hover .edit,
- .tarefas li:hover .del {
-  color: black;
- }
  .tarefas li .edit,
  .tarefas li .del {
   cursor: pointer;
@@ -40,4 +93,10 @@
  .tarefas li span {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .cent {
+    width: 100%;
+  }
 }
