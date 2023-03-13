@@ -14,14 +14,14 @@
   color: white;
   background:  #0a4f70;
   border-radius: 8px;
-  width: 100%;
+  width: 80%;
   /* min-width: 80%; */
 }
 
 .form button[type="submit"] {
   border: none;
   height: 50px;
-  width: 40px;
+  width: 100px;
   margin: 0 10px;
   border-radius: 8px;
   background: #f04c64;
@@ -29,4 +29,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.form button[type="submit"]:hover {
+  background-color: #0071e2;
 }

@@ -17,6 +17,7 @@ export default function Form({
       />
       <button type="submit">
         <FaPlus />
+        Create
       </button>
     </form>
   );
